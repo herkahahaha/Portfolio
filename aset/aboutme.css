@@ -1,0 +1,532 @@
+/* About Me */
+@charset "UTF-8";
+@import url('asset/font-awesome.min.css');
+@import url("https://fonts.googleapis.com/css?family=Scope+One|Trocchi");
+
+/* Nav */
+.nav-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #fff;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.nav-wrapper ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.nav-wrapper ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.nav-wrapper ul li:nth-child(1) a {
+    transition-delay: 0.2s;
+}
+
+.nav-wrapper ul li:nth-child(2) a {
+    transition-delay: 0.3s;
+}
+
+.nav-wrapper ul li:nth-child(3) a {
+    transition-delay: 0.4s;
+}
+
+.nav-wrapper ul li:not(:first-child) {
+    margin-left: 100;
+}
+
+.nav-wrapper ul li a {
+    padding: 10px 24px;
+    opacity: 0;
+    color: #000;
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transform: translateX(-20px);
+    transition: all 0.2s ease;
+}
+
+.nav-btn {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: block;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    z-index: 9999;
+    border-radius: 50%;
+}
+
+.nav-btn i {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: #000;
+    border-radius: 2px;
+    margin-left: 14px;
+}
+
+.nav-btn i:nth-child(1) {
+    margin-top: 16px;
+}
+
+.nav-btn i:nth-child(2) {
+    margin-top: 4px;
+    opacity: 1;
+}
+
+.nav-btn i:nth-child(3) {
+    margin-top: 4px;
+}
+
+
+#nav:checked+.nav-btn {
+    transform: rotate(45deg);
+}
+
+#nav:checked+.nav-btn i {
+    background: #000;
+    transition: transform 0.2s ease;
+}
+
+#nav:checked+.nav-btn i:nth-child(1) {
+    transform: translateY(6px) rotate(180deg);
+}
+
+#nav:checked+.nav-btn i:nth-child(2) {
+    opacity: 0;
+}
+
+#nav:checked+.nav-btn i:nth-child(3) {
+    transform: translateY(-6px) rotate(90deg);
+}
+
+#nav:checked~.nav-wrapper {
+    z-index: 9990;
+    opacity: 1;
+}
+
+#nav:checked~.nav-wrapper ul li a {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.hidden {
+    display: none;
+}
+
+/* ================================================================================= */
+@media (max-width: 800px) {
+
+    .sidebar ul a {
+        font-size: 20px;
+        text-align: center;
+        margin: 10%;
+        color: #FFF;
+    }
+
+    .sidebar ul a:hover {
+        color: #333;
+    }
+
+    .media {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .des {
+        font-size: 15px;
+        padding-bottom: 30px;
+    }
+
+    .news {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin-top: -10%;
+    }
+}
+
+/* ====================================================== */
+/* profile  */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.container .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin: 10% 0;
+    padding: 20px;
+}
+
+.container .content h1 {
+    font-family: 'Montserrat', sans-serif;
+    padding: 30px;
+}
+
+.container .content p {
+    padding: 0;
+}
+
+.container img {
+    width: 70%;
+}
+
+.des {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    color: #999;
+    line-height: 30px;
+    padding: 0;
+    text-align: left;
+}
+
+.news {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin-top: -10%;
+}
+
+.media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+    min-height: 30%;
+}
+
+.media img {
+    width: 50%;
+}
+
+img {
+    width: 70%;
+    margin-top: 10%;
+}
+
+#port {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0%;
+}
+
+h4 {
+    margin: 5% 0 0 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+@media (max-width: 800px) {
+    nav {
+        margin-top: 5px;
+    }
+
+    .sidebar ul a {
+        font-size: 20px;
+        text-align: center;
+        margin: 10%;
+        color: #FFF;
+    }
+
+    .sidebar ul a:hover {
+        color: #333;
+    }
+
+    .media {
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .des {
+        font-size: 15px;
+        padding-bottom: 30px;
+    }
+}
+
+/* ================================================================================================================= */
+/* footer */
+#footer {
+    padding: 6em 2em 4em 2em;
+}
+
+#footer>.inner {
+    margin: 0 auto;
+    width: 80em;
+}
+
+#footer .copyright {
+    color: #bfbfbf;
+    font-size: 0.9em;
+    margin: 0 0 2em 0;
+    padding: 0;
+    text-align: center;
+}
+
+#footer .copyright .icons a {
+    border-radius: 100%;
+    color: #bfbfbf;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 4px #fff, 0px 0px 0px 5px rgba(0, 0, 0, 0.1);
+    display: block;
+    font-size: 1em;
+    height: 3em;
+    line-height: 3em;
+    margin: 0 auto 0.7em;
+    text-align: center;
+    width: 3em;
+}
+
+@media screen and (max-width: 1280px) {
+
+    #footer>.inner {
+        width: 65em;
+    }
+
+}
+
+@media screen and (max-width: 980px) {
+
+    #footer>.inner {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width: 736px) {
+
+    #footer {
+        padding: 3em 1em 1em 1em;
+    }
+
+}
+
+/* ======================================================= */
+/* List */
+
+ol {
+    list-style: decimal;
+    margin: 0 0 2em 0;
+    padding-left: 1.25em;
+}
+
+ol li {
+    padding-left: 0.25em;
+}
+
+ul {
+    list-style: disc;
+    margin: 0 0 2em 0;
+    padding-left: 1em;
+}
+
+ul li {
+    padding-left: 0.5em;
+}
+
+ul.alt {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.alt li {
+    border-top: solid 1px;
+    padding: 0.5em 0;
+}
+
+ul.alt li:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.icons li {
+    display: inline-block;
+    padding: 0 2em 0 0;
+}
+
+ul.icons li:last-child {
+    padding-right: 0;
+}
+
+ul.icons li .icon:before {
+    font-size: 2em;
+}
+
+ul.icons {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.icons li {
+    display: inline-block;
+    padding: 0 2em 0 0;
+}
+
+ul.icons li:last-child {
+    padding-right: 0;
+}
+
+ul.icons li .icon:before {
+    font-size: 2em;
+}
+
+ul.actions {
+    cursor: default;
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.actions li {
+    display: inline-block;
+    padding: 0 1em 0 0;
+    vertical-align: middle;
+}
+
+ul.actions li:last-child {
+    padding-right: 0;
+}
+
+ul.actions.small li {
+    padding: 0 0.5em 0 0;
+}
+
+ul.actions.vertical li {
+    display: block;
+    padding: 1em 0 0 0;
+}
+
+ul.actions.vertical li:first-child {
+    padding-top: 0;
+}
+
+ul.actions.vertical li>* {
+    margin-bottom: 0;
+}
+
+ul.actions.vertical.small li {
+    padding: 0.5em 0 0 0;
+}
+
+ul.actions.vertical.small li:first-child {
+    padding-top: 0;
+}
+
+ul.actions.fit {
+    display: table;
+    margin-left: -1em;
+    padding: 0;
+    table-layout: fixed;
+    width: calc(100% + 1em);
+}
+
+ul.actions.fit li {
+    display: table-cell;
+    padding: 0 0 0 1em;
+}
+
+ul.actions.fit li>* {
+    margin-bottom: 0;
+}
+
+ul.actions.fit.small {
+    margin-left: -0.5em;
+    width: calc(100% + 0.5em);
+}
+
+ul.actions.fit.small li {
+    padding: 0 0 0 0.5em;
+}
+
+@media screen and (max-width: 736px) {
+
+    #footer {
+        padding: 3em 1em 1em 1em;
+    }
+
+}
+
+/* =========================================================== */
+/* Icon */
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
+
+.icon:before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+}
+
+.icon>.label {
+    display: none;
+}
+
+
+/* =============================== */
